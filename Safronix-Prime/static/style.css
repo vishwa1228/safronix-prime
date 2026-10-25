@@ -1,0 +1,1000 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* ==================================================
+   1. GLOBAL VARIABLES
+================================================== */
+
+:root {
+    --navy: #0b1728;
+    --navy-light: #12243b;
+    --gold: #d9b46b;
+    --cream: #f7f5f0;
+    --muted: #a8b4c4;
+    --white: #fff;
+
+    --border-dark: #263348;
+    --border-light: #e2ddd2;
+    --text-muted: #687281;
+
+    --transition: 0.25s ease;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--navy);
+    background: var(--cream);
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+::selection {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+
+/* ==================================================
+   2. NAVBAR AND COMPANY LOGO
+================================================== */
+
+.navbar {
+    min-height: 88px;
+    padding: 10px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: var(--navy);
+    color: var(--white);
+    border-bottom: 1px solid var(--border-dark);
+    position: relative;
+    z-index: 10;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font: 800 15px 'Manrope', sans-serif;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+}
+
+/* Actual Safronix logo image */
+
+.brand-logo {
+    display: block;
+    width: 190px;
+    height: 66px;
+    object-fit: contain;
+    object-position: left center;
+    transition: opacity var(--transition);
+}
+
+.brand:hover .brand-logo {
+    opacity: 0.88;
+}
+
+/* Retained in case the old text-based logo is reused */
+
+.brand small {
+    display: block;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.brand-icon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    background: var(--gold);
+    color: var(--navy);
+    border-radius: 8px;
+    font-size: 27px;
+    flex-shrink: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+nav a {
+    font-size: 13px;
+    color: #d4dce6;
+    transition: color var(--transition);
+}
+
+nav a:hover,
+.text-link:hover {
+    color: var(--gold);
+}
+
+.nav-cta {
+    border: 1px solid var(--gold);
+    padding: 10px 19px;
+    color: var(--gold);
+    transition:
+        background var(--transition),
+        color var(--transition);
+}
+
+.nav-cta:hover {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+
+/* ==================================================
+   3. HERO SECTION
+================================================== */
+
+.hero {
+    min-height: 610px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 25px;
+    padding: 75px 9%;
+    color: var(--white);
+
+    background:
+        radial-gradient(
+            ellipse at 80% 50%,
+            #1d3550,
+            transparent 50%
+        ),
+        var(--navy);
+
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 590px;
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow,
+.section-label {
+    color: #a8874d;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+}
+
+.hero h1,
+h2 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 5vw, 65px);
+    margin: 22px 0;
+}
+
+h1 span,
+h2 span {
+    color: var(--gold);
+}
+
+.hero-content > p {
+    max-width: 510px;
+    color: #c0cad7;
+    font-size: 15px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 28px;
+}
+
+.btn {
+    border: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 21px;
+    font: 600 13px 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.btn-gold:hover {
+    background: #e8c982;
+}
+
+.btn-outline {
+    color: var(--white);
+    border: 1px solid #637187;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.hero-note {
+    margin-top: 35px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #9daabd;
+}
+
+
+/* ==================================================
+   4. HERO VISUAL AND LOGO
+================================================== */
+
+.hero-visual {
+    position: relative;
+    min-height: 390px;
+    display: grid;
+    place-items: center;
+    isolation: isolate;
+}
+
+.visual-orbit {
+    position: absolute;
+    border: 1px solid #53637b;
+    border-radius: 50%;
+    transform: rotate(-25deg);
+    pointer-events: none;
+}
+
+.orbit-one {
+    width: 300px;
+    height: 300px;
+}
+
+.orbit-two {
+    width: 370px;
+    height: 225px;
+    border-color: #8b754e;
+}
+
+/* Circular frame behind the hero logo */
+
+.visual-center {
+    z-index: 1;
+    width: 300px;
+    min-height: 230px;
+    padding: 18px;
+    border-radius: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        145deg,
+        #203955,
+        #0a1525
+    );
+
+    border: 1px solid #d9b46b80;
+    box-shadow: 0 0 70px #d9b46b20;
+}
+
+/* Actual logo inside the hero visual */
+
+.hero-logo {
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    max-height: 210px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Retained for the original text-based hero logo */
+
+.visual-center span {
+    color: var(--gold);
+    font: 800 76px 'Manrope', sans-serif;
+    line-height: 1.1;
+}
+
+.visual-center small {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.visual-tag {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 9px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+
+/* ==================================================
+   5. TRUST STRIP
+================================================== */
+
+.trust-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+    padding: 23px 5%;
+    background: #eae5da;
+    color: #5f584a;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.trust-strip span {
+    text-align: center;
+}
+
+
+/* ==================================================
+   6. GENERAL SECTIONS
+================================================== */
+
+.section {
+    padding: 100px 9%;
+}
+
+.section h2,
+.contact-copy h2 {
+    font-size: clamp(31px, 4vw, 46px);
+    margin: 20px 0;
+}
+
+.section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: start;
+}
+
+.section-grid p,
+.section-heading > p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 13px;
+    transition: color var(--transition);
+}
+
+
+/* ==================================================
+   7. SERVICES SECTION
+================================================== */
+
+.services {
+    background: #eeeae1;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.service-card {
+    position: relative;
+    min-height: 270px;
+    padding: 26px 21px;
+    background: #fffefa;
+    border: 1px solid var(--border-light);
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+    box-shadow: 0 12px 30px #19253b0a;
+}
+
+.service-number {
+    color: #a2a6ac;
+    font-size: 11px;
+}
+
+.service-icon {
+    margin-top: 18px;
+    color: #a8874d;
+    font-size: 33px;
+    line-height: 1.4;
+}
+
+.service-card h3 {
+    font: 700 17px 'Manrope', sans-serif;
+}
+
+.service-card p {
+    color: #727b88;
+    font-size: 12px;
+}
+
+.disclaimer {
+    color: #777;
+    font-size: 11px;
+    margin-top: 25px;
+}
+
+
+/* ==================================================
+   8. APPROACH SECTION
+================================================== */
+
+.approach {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.approach h2 {
+    margin-bottom: 42px;
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.approach-grid > div {
+    border-top: 1px solid #3b4a5f;
+    padding-top: 20px;
+}
+
+.approach-grid > div > span {
+    color: var(--gold);
+    font-size: 12px;
+}
+
+.approach-grid h3 {
+    font: 700 17px 'Manrope', sans-serif;
+}
+
+.approach-grid p {
+    color: #b3bdcb;
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   9. CONTACT SECTION
+================================================== */
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 75px;
+    padding: 100px 9%;
+    background: #eae5da;
+}
+
+.contact-copy > p {
+    color: var(--text-muted);
+    font-size: 14px;
+    max-width: 420px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 26px;
+}
+
+.contact-detail > span {
+    color: #a8874d;
+    font-size: 25px;
+    flex-shrink: 0;
+}
+
+.contact-detail small {
+    color: #847044;
+    letter-spacing: 1.5px;
+    font-size: 10px;
+}
+
+.contact-detail p {
+    margin: 0;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+
+/* ==================================================
+   10. CONTACT FORM
+================================================== */
+
+.contact-form {
+    min-width: 0;
+    background: var(--white);
+    padding: 35px;
+    box-shadow: 0 15px 50px #19253b0b;
+}
+
+.contact-form h3 {
+    font: 800 24px 'Manrope', sans-serif;
+    margin: 0;
+}
+
+.contact-form > p,
+.form-note {
+    color: #777f8a;
+    font-size: 12px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 17px 0 6px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    font: 13px 'DM Sans', sans-serif;
+    color: var(--navy);
+    background: #faf9f6;
+    border: 1px solid #dededb;
+    border-radius: 0;
+    transition: border-color var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 1px;
+    border-color: var(--gold);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    margin-top: 22px;
+}
+
+.form-note {
+    display: block;
+    margin-top: 13px;
+    line-height: 1.6;
+}
+
+.flash {
+    padding: 12px;
+    margin: 12px 0;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.flash.success {
+    background: #e7f4e9;
+    color: #205b32;
+}
+
+.flash.error {
+    background: #fff0ed;
+    color: #8b3025;
+}
+
+
+/* ==================================================
+   11. FOOTER AND FOOTER LOGO
+================================================== */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 35px 7%;
+    background: #07111f;
+    color: #b4becc;
+    font-size: 11px;
+}
+
+.footer-brand {
+    color: var(--white);
+}
+
+.footer-brand .brand-logo {
+    width: 170px;
+    height: 60px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer > span {
+    text-align: right;
+}
+
+
+/* ==================================================
+   12. TABLET RESPONSIVE DESIGN
+================================================== */
+
+@media (max-width: 1100px) {
+    .navbar {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    .brand-logo {
+        width: 165px;
+        height: 60px;
+    }
+
+    .hero {
+        padding: 65px 6%;
+    }
+
+    .section,
+    .contact-section {
+        padding: 80px 6%;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact-section {
+        gap: 40px;
+    }
+}
+
+
+/* ==================================================
+   13. MOBILE RESPONSIVE DESIGN
+================================================== */
+
+@media (max-width: 650px) {
+
+    /* Navbar */
+
+    .navbar {
+        min-height: 75px;
+        height: auto;
+        padding: 12px 5%;
+        gap: 12px;
+    }
+
+    .brand-logo {
+        width: 140px;
+        height: 52px;
+    }
+
+    nav {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    nav a:first-child,
+    nav a:nth-child(2) {
+        display: none;
+    }
+
+    .nav-cta {
+        padding: 8px 10px;
+    }
+
+    /* Hero */
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 55px 7%;
+    }
+
+    .hero h1 {
+        font-size: clamp(37px, 9vw, 48px);
+        letter-spacing: -1px;
+    }
+
+    .hero-content > p {
+        font-size: 14px;
+    }
+
+    .hero-actions {
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 13px 15px;
+        font-size: 12px;
+    }
+
+    .hero-visual {
+        min-height: 310px;
+    }
+
+    .orbit-one {
+        width: 235px;
+        height: 235px;
+    }
+
+    .orbit-two {
+        width: 280px;
+        height: 180px;
+    }
+
+    .visual-center {
+        width: 255px;
+        min-height: 190px;
+        padding: 15px;
+    }
+
+    .hero-logo {
+        max-width: 225px;
+        max-height: 165px;
+    }
+
+    .visual-center span {
+        font-size: 60px;
+    }
+
+    .visual-tag {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    /* Trust strip */
+
+    .trust-strip {
+        padding: 20px 5%;
+        gap: 12px 18px;
+        font-size: 9px;
+    }
+
+    /* General sections */
+
+    .section,
+    .contact-section {
+        padding: 65px 7%;
+    }
+
+    .section h2,
+    .contact-copy h2 {
+        font-size: clamp(29px, 7vw, 38px);
+        letter-spacing: -1px;
+    }
+
+    .section-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .section-heading {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    /* Service cards */
+
+    .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .service-card {
+        min-height: 250px;
+        padding: 20px 15px;
+    }
+
+    .service-card h3 {
+        font-size: 15px;
+    }
+
+    .service-card p {
+        font-size: 12px;
+    }
+
+    /* Approach */
+
+    .approach-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 16px;
+    }
+
+    /* Contact */
+
+    .contact-section {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .contact-form {
+        padding: 25px 20px;
+    }
+
+    /* Footer */
+
+    footer {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 30px 7%;
+        gap: 15px;
+    }
+
+    .footer-brand .brand-logo {
+        width: 150px;
+        height: 55px;
+    }
+
+    footer > span {
+        text-align: left;
+    }
+}
+
+
+/* ==================================================
+   14. SMALL MOBILE SCREENS
+================================================== */
+
+@media (max-width: 380px) {
+
+    .navbar {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .brand-logo {
+        width: 115px;
+        height: 46px;
+    }
+
+    nav {
+        gap: 7px;
+    }
+
+    .nav-cta {
+        padding: 7px 8px;
+        font-size: 10px;
+    }
+
+    .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .visual-center {
+        width: 225px;
+        min-height: 175px;
+    }
+
+    .hero-logo {
+        max-width: 195px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        min-height: auto;
+    }
+
+    .contact-form {
+        padding: 22px 16px;
+    }
+}
+
+
+/* ==================================================
+   15. ACCESSIBILITY
+================================================== */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition: none !important;
+    }
+}
